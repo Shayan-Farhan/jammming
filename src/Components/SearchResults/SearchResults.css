@@ -1,0 +1,17 @@
+.SearchResults {
+    width: 50%;
+    height: 1000px;
+    overflow-y: scroll;
+    background-color: ivory;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+@media only screen and (width < 1020px) {
+    .SearchResults {
+        width: 90%;
+        margin-bottom: 2rem;
+    }
+}
