@@ -15,6 +15,7 @@
     color: ivory;
     text-align: center;
     font-size: 1rem;
+    font-family: "Open Sans", sans-serif;
 }
 
 .SearchBar:focus {
@@ -33,6 +34,7 @@
     border: 1px solid black;
     color: black;
     font-weight: bold;
+    font-family: "Open Sans", sans-serif;
 }
 
 .SearchButton:hover {

@@ -5,6 +5,11 @@
     background-color: ivory;
 }
 
+
+.SearchResults h2 {
+    font-family: "Roboto Slab", serif;
+}
+
 ::-webkit-scrollbar {
     display: none;
 }

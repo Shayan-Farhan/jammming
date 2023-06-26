@@ -8,6 +8,10 @@
     background-color: Ivory;
 }
 
+::-webkit-scrollbar {
+    display: none;
+}
+
 .Playlist input {
     width: 100%;
     border: 1px solid black;
