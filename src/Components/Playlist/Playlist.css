@@ -1,0 +1,48 @@
+.Playlist {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: scroll;
+    width: 50%;
+    padding: 2.25rem 1.25rem;
+    background-color: Ivory;
+}
+
+.Playlist input {
+    width: 100%;
+    border: 1px solid black;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.5rem;
+    color: black;
+}
+
+.save {
+    cursor: pointer;
+    width: 10rem;
+    padding: 0.75rem 0;
+    border-radius: 50px;
+    border: 1px solid black;
+    margin-top: 1.25rem;
+    background-color: Ivory;
+    text-align: center;
+    font-size: 0.75rem;
+    transition: Ivory 0.25s;
+    color: black;
+    font-weight: bold;
+    font-family: "Open Sans", sans-serif;
+}
+
+.save:hover {
+    border: 1px solid red;
+}
+
+.save:active {
+    border: 1px solid blue;
+}
+
+@media only screen and (width < 1020px) {
+    .Playlist {
+        width: 90%;
+        margin-bottom: 2rem;
+    }
+}
