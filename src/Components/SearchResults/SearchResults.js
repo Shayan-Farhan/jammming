@@ -6,7 +6,7 @@ function SearchResults (props) {
     return (
         <section className = "SearchResults">
             <h2>
-                Search SearchResults
+                Search Results
             </h2>
             <TrackList
               tracks={props.SearchResults}
