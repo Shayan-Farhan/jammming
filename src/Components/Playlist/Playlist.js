@@ -1,10 +1,10 @@
-//Handles saving a tracklist to spotify as a playlist and changing the 
-//playlists' name
-
 import React, { useCallback } from "react";
 import "./Playlist.css";
 import TrackList from "../TrackList/TrackList";
 
+/**
+*Send a tracklist to spotify as a playlist and change the playlists' name.
+*/
 function Playlist (props) {
     const changeName = useCallback (
         (event) => {
