@@ -1,0 +1,42 @@
+body, html, #root {
+    height: 100%;
+}
+
+html {
+    font-size: 18px;
+}
+
+h1 {
+    padding: 0.75rem 0;
+    background-color: Ivory;
+    text-align: center;
+    font-family: "Roboto Slab", sans-serif;
+    font-size: 2rem;
+    color: black;
+}
+
+h1 .emphasis {
+    color: blueviolet;
+}
+
+.app {
+    height: 100%;
+    padding: 0 20% 10% 20%;
+    font-family: "Open Sans", sans-serif;
+    font-weight: normal;
+    color: black;
+    background-color: Ivory;
+}
+
+.playlist {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+@media only screen and (width < 1020px) {
+    .playlist {
+        align-items: center;
+        flex-direction: column;
+    }
+}
