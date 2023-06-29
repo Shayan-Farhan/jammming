@@ -15,7 +15,7 @@ function Track (props) {
     );
 
     function renderAction () {
-        if (props.isRemoval) {
+        if (props.isInPlaylist) {
             return (
                 <button className = "Track-removal" onClick = {removeTrack}>
                     -

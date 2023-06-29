@@ -4,11 +4,10 @@ import "./SearchBar.css";
 function SearchBar (props) {
     const [song, setSong] = useState('');
 
-    const handleNewSearch = useCallback (
-        (event) => {
+    function handleNewSearch (event) {
             setSong(event.target.value);
-        }, []
-    );
+        };
+
 
     const search = useCallback (
         (event) => {

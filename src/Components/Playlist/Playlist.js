@@ -5,6 +5,10 @@ import React, { useCallback } from "react";
 import "./Playlist.css";
 import TrackList from "../TrackList/TrackList";
 
+/**
+ * Saves a tracklist to spotify as a playlist and handles playlist
+ *  name changes.
+ */
 function Playlist (props) {
     const changeName = useCallback (
         (event) => {
