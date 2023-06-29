@@ -3,13 +3,13 @@ import "./Track.css";
 
 function Track (props) {
     const addTrack = useCallback(
-        (event) => {
+        () => {
             props.onAdd(props.track);
         }, [props.onAdd, props.track]
     );
 
     const removeTrack = useCallback (
-        (event) => {
+        () => {
             props.onRemove(props.track);
         }, [props.onRemove, props.track]
     );
