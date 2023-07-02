@@ -6,11 +6,6 @@ import SearchBar from "../SearchBar/SearchBar";
 import SearchResults from "../SearchResults/SearchResults";
 import Spotify from "../../API stuff/Spotify";
 
-/**
- * Note: running npm start will throw an error until Spotify.js is built.
- * @returns the app that is rendered in index.js
- */
-
 function App() {
     const [searchResults, setSearchResults] = useState([]);
     const [playlistName, setPlaylistName] = useState('New Playlist');
