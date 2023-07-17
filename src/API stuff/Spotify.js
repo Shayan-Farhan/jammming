@@ -6,12 +6,17 @@
  * Remember to do App.css --- this wasn't completed with App.js!
  */
 
-function Spotify() {
+function createSpotify() {
     const clientId = '6eb43fe6e09d40c4a4048b6a095e468a';
     const redirectUri = 'http://localhost:3000';
-    let accessToken;
+
+    function saveAccessToken(accessToken) {
+        localStorage.setItem('spotify-access-token', accessToken)
+    }
 
     function getAccessToken() {
+        var accessToken = localStorage.getItem('spotify-access-token')
+
         if (accessToken) {
             return accessToken;
         }
@@ -23,6 +28,7 @@ function Spotify() {
             accessToken = matchAccessToken[1];
             const expiresIn = Number(checkNotExpired[1]);
             window.setTimeout(() => accessToken = '', expiresIn * 1000);
+            saveAccessToken(accessToken);
             return accessToken;
         } else {
             const accessUrl = `https://accounts.spotify.com/authorize?client_id=${clientId}&response_type=token&scope=playlist-modify-public&redirect_uri=${redirectUri}`;
@@ -32,8 +38,9 @@ function Spotify() {
     }
 
      function fetchFromSpotify(path, method, bodyObj) {
+        var accessToken = getAccessToken();
         if (!accessToken) {
-            return;
+            return Promise.reject();
         } else {
             return fetch(`https://api.spotify.com/v1/${path}`, {
                 headers: { Authorization: `Bearer ${accessToken}` },
@@ -49,7 +56,7 @@ function Spotify() {
         return fetchFromSpotify(path, "GET")
     }
 
-    function postToSpotify(path) {
+    function postToSpotify(path, bodyObj) {
         return fetchFromSpotify(path, "POST", bodyObj);
 
     }
@@ -62,7 +69,7 @@ function Spotify() {
                 return response.tracks.items.map(track => ({
                     id: track.id,
                     name: track.name,
-                    artist: track.artist[0].name,
+                    artist: track.artists[0].name,
                     album: track.album.name,
                     uri: track.uri,
                 }))
@@ -86,10 +93,14 @@ function Spotify() {
         return getUser().then(user => createPlaylist(user.id, name)).then(playlist => addTracks(playlist.id, trackUris))
     }
 
+    getAccessToken();
+
     return {
         search,
         saveNewPlaylist,
     };
 }
 
-export default Spotify;
+const spotify = createSpotify();
+
+export default spotify;
