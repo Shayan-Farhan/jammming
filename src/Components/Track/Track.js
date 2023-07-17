@@ -21,12 +21,13 @@ function Track (props) {
                     -
                 </button>
             );
+        } else {
+            return (
+                <button className = "Track-add" onClick = {addTrack}>
+                    +
+                </button>
+            );
         }
-        return (
-            <button className = "Track-add" onClick = {addTrack}>
-                +
-            </button>
-        );
     }
 
     return (
