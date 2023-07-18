@@ -32,9 +32,9 @@ function App() {
         setPlaylistName(name);
     }, [playlistName]);
 
-    const savePlaylist = useCallback(() => {
+    const saveNewPlaylist = useCallback(() => {
         const trackUris = playlistTracks.map((track) => track.uri);
-        Spotify.savePlaylist(playlistName, trackUris).then(() => {
+        Spotify.saveNewPlaylist(playlistName, trackUris).then(() => {
             setPlaylistName("New Playlist");
             setPlaylistTracks([]);
             /**
@@ -54,17 +54,17 @@ function App() {
                     onSearch={search}
                 />
                 <section className="playlist">
-                    <SearchResults 
+                    {!!searchResults && <SearchResults 
                         searchResults={searchResults}
                         onAdd={addTrack}
-                    />
+                    />}
                     <Playlist 
                         onNameChange={changePlaylistName}
                         playlistTracks={playlistTracks}
                         playlistName={playlistName}
                         onRemove={removeTrack}
                         onAdd={addTrack}
-                        onSave={savePlaylist}
+                        onSave={saveNewPlaylist}
                     />
                 </section>
             </section>

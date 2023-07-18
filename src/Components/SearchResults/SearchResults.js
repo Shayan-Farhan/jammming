@@ -9,7 +9,7 @@ function SearchResults (props) {
                 Search Results
             </h2>
             <TrackList
-              tracks={props.SearchResults}
+              tracks={props.searchResults}
               onAdd = {props.onAdd}
               />
         </section>

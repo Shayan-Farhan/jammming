@@ -15,7 +15,7 @@ function TrackList(props) {
                         onRemove={props.onRemove}
                     />
                 );
-            })};
+            })}
         </section>
     );
     ;
