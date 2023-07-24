@@ -2,8 +2,8 @@ import React, { useCallback } from "react";
 import "./Track.css";
 
 function Track (props) {
-    function renderAction () {
-        if (props.isInPlaylist) {
+     function renderAction () {
+        if (props.isRemoval) {
             return (
                 <button className = "Track-removal" onClick = {removeTrack}>
                     -
