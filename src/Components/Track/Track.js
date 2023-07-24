@@ -2,18 +2,6 @@ import React, { useCallback } from "react";
 import "./Track.css";
 
 function Track (props) {
-    const addTrack = useCallback(
-        () => {
-            props.onAdd(props.track);
-        }, [props.onAdd, props.track]
-    );
-
-    const removeTrack = useCallback (
-        () => {
-            props.onRemove(props.track);
-        }, [props.onRemove, props.track]
-    );
-
     function renderAction () {
         if (props.isInPlaylist) {
             return (
@@ -29,6 +17,18 @@ function Track (props) {
             );
         }
     }
+
+    const addTrack = useCallback(
+        () => {
+            props.onAdd(props.track);
+        }, [props.onAdd, props.track]
+    );
+
+    const removeTrack = useCallback (
+        () => {
+            props.onRemove(props.track);
+        }, [props.onRemove, props.track]
+    );
 
     return (
         <section className = "Track">
