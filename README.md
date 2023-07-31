@@ -6,11 +6,15 @@ Jammming is a website that let's the user search spotify for music, add it to a 
 
 ## Usage
 
-Simply visit the website. Currently because the app is under development you will recieve a 401 error unless I have given you permission with the Spotify API. 
+To run the app, open the app and run it in the terminal. For Bash, you can do this by using the cd command to change to the project then running "npm start"
+This project does require Node Package Manager (npm) to run.
 
 ## Technologies
-This project uses the Spotiyf API and React.js. It was bootstrapped using Create-React-App.
+This project uses the Spotify API and the React framework. The languages used are HTML, CSS, and JavaScript. It was bootstrapped using Create-React-App.
 
 ## Contributors
-Doug Little contributed by reviewing my code during the development process and either making edits directly or giving me recomendations for me to implement.
+Doug Little contributed as a buddy programmer by reviewing my code during the development process and giving recomendations to improve the app and help in debugging it.
 The idea for this project and the name "Jammming" come from Codecademy, but the code is my own. 
+
+## Status
+This project is mostly complete but I'm still making some small revisions.
