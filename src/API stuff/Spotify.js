@@ -3,7 +3,7 @@ function createSpotify() {
     const redirectUri = 'http://localhost:3000';
     
     function saveAccessToken(accessToken) {
-        localStorage.setItem('spotify-access-token', accessToken)
+        sessionStorage.setItem('spotify-access-token', accessToken);
     }
 
     function getAccessToken() {
@@ -73,11 +73,11 @@ function createSpotify() {
     }
 
     function createPlaylist (userId, name) {
-        return postToSpotify (`users/${userId}/playlists`, name);
+        return postToSpotify (`users/${userId}/playlists`, { name });
     }
 
     function addTracks (playlistId, trackUris) {
-        return postToSpotify (`/playlists/${playlistId}/tracks`, { uris: trackUris })
+        return postToSpotify (`playlists/${playlistId}/tracks`, { uris: trackUris })
     }
 
     function saveNewPlaylist (name, trackUris) {

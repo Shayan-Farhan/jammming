@@ -15,7 +15,7 @@ function Playlist (props) {
         <section className = "Playlist" >
             <input 
               onChange = {changeName}
-              defaultValue = {"New Playlist"}
+              value = {props.playlistName}
             />
             <TrackList 
               tracks = {props.playlistTracks}
