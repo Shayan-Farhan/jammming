@@ -18,3 +18,7 @@ The idea for this project and the name "Jammming" come from Codecademy, but the 
 
 ## Status
 This project is mostly complete but I'm still making some small revisions.
+
+## Example
+This is a screenshot of the current (as of 7/31/2023) front page of the app
+![jammming front page](jammming-front-page.png)
