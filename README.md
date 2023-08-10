@@ -22,3 +22,5 @@ This project is mostly complete but I'm still making some small revisions.
 ## Example
 This is a screenshot of the current (as of 7/31/2023) front page of the app
 ![jammming front page](jammming-front-page.png)
+## Video
+There are two video files in this repository demonstrating my project: "Jammming screen recording" which is a screen recording of the website, and "Jammming audio recording", which is an audio recording of me talking through the project and the development process.
