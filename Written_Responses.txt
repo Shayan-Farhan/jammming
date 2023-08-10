@@ -1,0 +1,15 @@
+App Design:
+The purpose of the application is to provide spotify users an easy way to create and upload new playlists. It is intended for existing spotify users.
+This application provides a more streamlined and easy way to create spotify playlists.
+This application has a search bar where a user can search tracks on spotify, a list of the search results, and the ability to add search results to a new playlist the user creates. The user can then upload that playlist to their spotify account.
+These features are designed to be easy to use and intuitive so that the user easily knows how to use the app to create spotify playlists.
+Program Choices:
+This program was bootstrapped using Create React App. I chose Create React App because it sets up most of the filestructure of the app by itself, instead of me having to do it by hand. It also creates some resources I can use for the application.
+I used the JavaScript React framework because it is a framework I have experience with and helps to create apps because of features like JSX, controlling states, etc.
+I store search results, playlists, and other data coming from and being posted to the Spotify API in lists/arrays to help manage the data. These lists/arrays help collect the data in one place and make it easier to iterate and otherwise manipulate the data.
+One example of an algorithm used in this project is the addTrack function inside of App.js. The function uses React's useCallback function so that the app only updates if one of the values in the dependency array has changed. 
+Here, I use useCallback with the first parameter being a function. That function has one paramater, track. I then use an if statement to check if at least one of the tracks in the playlistTracks array (which is defined earlier in the file) has an id matching the id of the track parameter.
+If it does, I return true. Otherwise, I set the playlist tracks (using React's state hook) to be an array with all the old tracks plus the new track parameter. 
+I do this using an if statement, which uses .some() to iterate through the playlistTracks array and test if at least one track in the array passes a test supplid by a given function (which in this case checks if the id of the tracks in playlistTracks matches the id of the track parameter).
+When this algorithm is applied, it is used when the user presses the button to add a track to the playlist. If the track is already in the playlist, the main part of the if statement will run, and the function will return true, therefore, nothing happens. 
+However, if the track is not already in the playlist, the function will update the list of all the tracks in the playlist to now include the new selected track. 
