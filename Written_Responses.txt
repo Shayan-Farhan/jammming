@@ -13,3 +13,12 @@ If it does, I return true. Otherwise, I set the playlist tracks (using React's s
 I do this using an if statement, which uses .some() to iterate through the playlistTracks array and test if at least one track in the array passes a test supplid by a given function (which in this case checks if the id of the tracks in playlistTracks matches the id of the track parameter).
 When this algorithm is applied, it is used when the user presses the button to add a track to the playlist. If the track is already in the playlist, the main part of the if statement will run, and the function will return true, therefore, nothing happens. 
 However, if the track is not already in the playlist, the function will update the list of all the tracks in the playlist to now include the new selected track. 
+Here is the code in question:
+const addTrack = useCallback(
+        (track) => {
+            if (playlistTracks.some((savedTrack) => savedTrack.id === track.id)) {
+                return true;
+            }
+            setPlaylistTracks((prevTracks) => [...prevTracks, track]);
+        }, [playlistTracks]
+    );
